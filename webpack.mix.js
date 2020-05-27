@@ -11,7 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .copy('quasar-broker-client/dist/spa/index.html', 'resources/views/app.blade.php')
+mix.copy('quasar-broker-client/dist/spa/index.html', 'resources/views/app.blade.php')
     .copyDirectory('quasar-broker-client/dist/spa', 'public');

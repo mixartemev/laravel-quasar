@@ -13,3 +13,5 @@ npm-debug.log
 yarn-error.log
 *.lock
 /quasar-broker-client
+/resources/views/app.blade.php
+
