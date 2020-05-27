@@ -12,4 +12,6 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .copy('exc-quasar/dist/spa/index.html', 'resources/views/app.blade.php')
+    .copyDirectory('exc-quasar/dist/spa', 'public');
