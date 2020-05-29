@@ -15,3 +15,5 @@ yarn-error.log
 /quasar-broker-client
 /resources/views/app.blade.php
 
+/draft.yaml
+/.blueprint
