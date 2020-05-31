@@ -25,9 +25,9 @@ class ProfileUpdateRequest extends FormRequest
     {
         return [
             'code' => 'required|string|max:15',
-            'title' => 'required|string',
+            'title' => 'string',
             'market_type' => 'required|integer',
-            'tariff_id' => 'required|integer|exists:tariffs,id',
+            'tariff_id' => 'integer|exists:tariffs,id',
             'user_id' => 'required|integer',
         ];
     }

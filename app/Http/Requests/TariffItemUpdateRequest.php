@@ -25,7 +25,7 @@ class TariffItemUpdateRequest extends FormRequest
     {
         return [
             'tariff_id' => 'required|integer|exists:tariffs,id',
-            'level' => 'required|integer',
+            'level' => 'integer',
             'percent' => 'required|numeric|gt:0|between:0,9.999',
         ];
     }

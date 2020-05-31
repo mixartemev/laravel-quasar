@@ -27,8 +27,8 @@ class TariffUpdateRequest extends FormRequest
             'name' => 'required|string',
             'market_type' => 'required|integer',
             'deposit' => 'required|integer',
-            'min' => 'required|integer',
-            'min_condition' => 'required|integer',
+            'min' => 'integer',
+            'min_condition' => 'integer',
         ];
     }
 }
