@@ -10,10 +10,28 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $ts_code
  * @property int $profile_id
  * @property int $tariff_id
- * @property string $cur
  */
 class Market extends Model
 {
+    const CUR_RUB = 0;
+    const CUR_USD = 1;
+
+    const MARKET_FRX = 0;
+    const MARKET_MOEX = 1;
+    const MARKET_SPBX = 2;
+
+    const MARKET_TYPE = [
+        self::MARKET_FRX => Profile::MARKET_TYPE_FOREX,
+        self::MARKET_MOEX => Profile::MARKET_TYPE_FOUND,
+        self::MARKET_SPBX => Profile::MARKET_TYPE_FOUND,
+    ];
+
+    const MARKET_CUR = [
+        self::MARKET_FRX => self::CUR_RUB,
+        self::MARKET_MOEX => self::CUR_RUB,
+        self::MARKET_SPBX => self::CUR_USD,
+    ];
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -31,7 +49,6 @@ class Market extends Model
         'ts_code',
         'profile_id',
         'tariff_id',
-        'cur',
     ];
 
     /**

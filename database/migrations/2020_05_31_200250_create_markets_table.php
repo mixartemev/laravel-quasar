@@ -19,7 +19,6 @@ class CreateMarketsTable extends Migration
             $table->string('ts_code', 15);
             $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
             $table->foreignId('tariff_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->enum('cur', ["rub","usd"]);
         });
     }
 

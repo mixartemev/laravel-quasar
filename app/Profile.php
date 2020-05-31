@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Profile extends Model
 {
+    const MARKET_TYPE_FOREX = 0;
+    const MARKET_TYPE_FOUND = 1;
+
     /**
      * Indicates if the model should be timestamped.
      *

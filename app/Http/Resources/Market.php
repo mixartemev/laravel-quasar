@@ -20,7 +20,6 @@ class Market extends JsonResource
             'ts_code' => $this->ts_code,
             'profile_id' => $this->profile_id,
             'tariff_id' => $this->tariff_id,
-            'cur' => $this->cur,
         ];
     }
 }

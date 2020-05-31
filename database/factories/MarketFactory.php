@@ -11,6 +11,5 @@ $factory->define(Market::class, function (Faker $faker) {
         'ts_code' => $faker->word,
         'profile_id' => factory(\App\Profile::class),
         'tariff_id' => factory(\App\Tariff::class),
-        'cur' => $faker->randomElement(["rub","usd"]),
     ];
 });
