@@ -10,7 +10,7 @@ composer install
 chmod -R 777 bootstrap/cache storage
 php artisan key:generate
 php artisan storage:link
-php artisan migrate:fresh --seed
+php artisan migrate --seed
 git clone git@github.com:mixartemev/quasar-broker-client.git
 cd quasar-broker-client
 yarn add global @quasar/cli
