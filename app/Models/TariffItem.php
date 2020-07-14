@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -47,6 +47,6 @@ class TariffItem extends Model
      */
     public function tariff()
     {
-        return $this->belongsTo(\App\Tariff::class);
+        return $this->belongsTo(Tariff::class);
     }
 }

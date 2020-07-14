@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Deal;
+use App\Models\Deal;
 use App\Http\Requests\DealStoreRequest;
 use App\Http\Requests\DealUpdateRequest;
 use App\Http\Resources\Deal as DealResource;
@@ -12,8 +12,8 @@ use Illuminate\Http\Request;
 class DealController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\DealCollection
+     * @param  Request  $request
+     * @return DealCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class DealController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\DealStoreRequest $request
-     * @return \App\Http\Resources\Deal
+     * @param  DealStoreRequest  $request
+     * @return DealResource
      */
     public function store(DealStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class DealController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Deal $deal
-     * @return \App\Http\Resources\Deal
+     * @param  Request  $request
+     * @param  Deal  $deal
+     * @return DealResource
      */
     public function show(Request $request, Deal $deal)
     {
@@ -44,9 +44,9 @@ class DealController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\DealUpdateRequest $request
-     * @param \App\Deal $deal
-     * @return \App\Http\Resources\Deal
+     * @param  DealUpdateRequest  $request
+     * @param  Deal  $deal
+     * @return DealResource
      */
     public function update(DealUpdateRequest $request, Deal $deal)
     {
@@ -56,9 +56,10 @@ class DealController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Deal $deal
+     * @param  Request  $request
+     * @param  Deal  $deal
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, Deal $deal)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -58,6 +58,6 @@ class Deal extends Model
      */
     public function profile()
     {
-        return $this->belongsTo(\App\Profile::class);
+        return $this->belongsTo(Profile::class);
     }
 }

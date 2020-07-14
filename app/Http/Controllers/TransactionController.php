@@ -6,14 +6,14 @@ use App\Http\Requests\TransactionStoreRequest;
 use App\Http\Requests\TransactionUpdateRequest;
 use App\Http\Resources\Transaction as TransactionResource;
 use App\Http\Resources\TransactionCollection;
-use App\Transaction;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\TransactionCollection
+     * @param  Request  $request
+     * @return TransactionCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class TransactionController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TransactionStoreRequest $request
-     * @return \App\Http\Resources\Transaction
+     * @param  TransactionStoreRequest  $request
+     * @return TransactionResource
      */
     public function store(TransactionStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class TransactionController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Transaction $transaction
-     * @return \App\Http\Resources\Transaction
+     * @param  Request  $request
+     * @param  Transaction  $transaction
+     * @return TransactionResource
      */
     public function show(Request $request, Transaction $transaction)
     {
@@ -44,9 +44,9 @@ class TransactionController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TransactionUpdateRequest $request
-     * @param \App\Transaction $transaction
-     * @return \App\Http\Resources\Transaction
+     * @param  TransactionUpdateRequest  $request
+     * @param  Transaction  $transaction
+     * @return TransactionResource
      */
     public function update(TransactionUpdateRequest $request, Transaction $transaction)
     {
@@ -56,9 +56,10 @@ class TransactionController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Transaction $transaction
+     * @param  Request  $request
+     * @param  Transaction  $transaction
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, Transaction $transaction)
     {

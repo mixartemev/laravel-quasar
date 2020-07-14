@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -59,7 +59,7 @@ class Transaction extends Model
      */
     public function from()
     {
-        return $this->belongsTo(\App\Profile::class);
+        return $this->belongsTo(Profile::class);
     }
 
     /**
@@ -67,6 +67,6 @@ class Transaction extends Model
      */
     public function to()
     {
-        return $this->belongsTo(\App\Profile::class);
+        return $this->belongsTo(Profile::class);
     }
 }

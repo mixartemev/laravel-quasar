@@ -6,14 +6,14 @@ use App\Http\Requests\MarketStoreRequest;
 use App\Http\Requests\MarketUpdateRequest;
 use App\Http\Resources\Market as MarketResource;
 use App\Http\Resources\MarketCollection;
-use App\Market;
+use App\Models\Market;
 use Illuminate\Http\Request;
 
 class MarketController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\MarketCollection
+     * @param  Request  $request
+     * @return MarketCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class MarketController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\MarketStoreRequest $request
-     * @return \App\Http\Resources\Market
+     * @param  MarketStoreRequest  $request
+     * @return MarketResource
      */
     public function store(MarketStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class MarketController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Market $market
-     * @return \App\Http\Resources\Market
+     * @param  Request  $request
+     * @param  Market  $market
+     * @return MarketResource
      */
     public function show(Request $request, Market $market)
     {
@@ -44,9 +44,9 @@ class MarketController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\MarketUpdateRequest $request
-     * @param \App\Market $market
-     * @return \App\Http\Resources\Market
+     * @param  MarketUpdateRequest  $request
+     * @param  Market  $market
+     * @return MarketResource
      */
     public function update(MarketUpdateRequest $request, Market $market)
     {
@@ -56,9 +56,10 @@ class MarketController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Market $market
+     * @param  Request  $request
+     * @param  Market  $market
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, Market $market)
     {

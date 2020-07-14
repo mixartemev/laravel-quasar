@@ -6,14 +6,14 @@ use App\Http\Requests\ProfileStoreRequest;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Http\Resources\Profile as ProfileResource;
 use App\Http\Resources\ProfileCollection;
-use App\Profile;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\ProfileCollection
+     * @param  Request  $request
+     * @return ProfileCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class ProfileController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\ProfileStoreRequest $request
-     * @return \App\Http\Resources\Profile
+     * @param  ProfileStoreRequest  $request
+     * @return ProfileResource
      */
     public function store(ProfileStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class ProfileController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Profile $profile
-     * @return \App\Http\Resources\Profile
+     * @param  Request  $request
+     * @param  Profile  $profile
+     * @return ProfileResource
      */
     public function show(Request $request, Profile $profile)
     {
@@ -44,9 +44,9 @@ class ProfileController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\ProfileUpdateRequest $request
-     * @param \App\Profile $profile
-     * @return \App\Http\Resources\Profile
+     * @param  ProfileUpdateRequest  $request
+     * @param  Profile  $profile
+     * @return ProfileResource
      */
     public function update(ProfileUpdateRequest $request, Profile $profile)
     {
@@ -56,9 +56,10 @@ class ProfileController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Profile $profile
+     * @param  Request  $request
+     * @param  Profile  $profile
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, Profile $profile)
     {

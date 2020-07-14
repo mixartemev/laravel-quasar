@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -69,7 +69,7 @@ class Market extends Model
      */
     public function profile()
     {
-        return $this->belongsTo(\App\Profile::class);
+        return $this->belongsTo(Profile::class);
     }
 
     /**
@@ -77,6 +77,6 @@ class Market extends Model
      */
     public function tariff()
     {
-        return $this->belongsTo(\App\Tariff::class);
+        return $this->belongsTo(Tariff::class);
     }
 }

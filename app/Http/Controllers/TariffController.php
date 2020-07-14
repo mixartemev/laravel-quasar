@@ -6,14 +6,14 @@ use App\Http\Requests\TariffStoreRequest;
 use App\Http\Requests\TariffUpdateRequest;
 use App\Http\Resources\Tariff as TariffResource;
 use App\Http\Resources\TariffCollection;
-use App\Tariff;
+use App\Models\Tariff;
 use Illuminate\Http\Request;
 
 class TariffController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\TariffCollection
+     * @param  Request  $request
+     * @return TariffCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class TariffController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TariffStoreRequest $request
-     * @return \App\Http\Resources\Tariff
+     * @param  TariffStoreRequest  $request
+     * @return TariffResource
      */
     public function store(TariffStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class TariffController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Tariff $tariff
-     * @return \App\Http\Resources\Tariff
+     * @param  Request  $request
+     * @param  Tariff  $tariff
+     * @return TariffResource
      */
     public function show(Request $request, Tariff $tariff)
     {
@@ -44,9 +44,9 @@ class TariffController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TariffUpdateRequest $request
-     * @param \App\Tariff $tariff
-     * @return \App\Http\Resources\Tariff
+     * @param  TariffUpdateRequest  $request
+     * @param  Tariff  $tariff
+     * @return TariffResource
      */
     public function update(TariffUpdateRequest $request, Tariff $tariff)
     {
@@ -56,9 +56,10 @@ class TariffController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Tariff $tariff
+     * @param  Request  $request
+     * @param  Tariff  $tariff
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, Tariff $tariff)
     {

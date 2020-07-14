@@ -13,7 +13,7 @@ return [
     | within the composer.json file of your Laravel application.
     |
     */
-    'namespace' => 'App',
+    'namespace' => 'App\\Models',
 
 
     /*

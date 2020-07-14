@@ -6,14 +6,14 @@ use App\Http\Requests\TariffItemStoreRequest;
 use App\Http\Requests\TariffItemUpdateRequest;
 use App\Http\Resources\TariffItem as TariffItemResource;
 use App\Http\Resources\TariffItemCollection;
-use App\TariffItem;
+use App\Models\TariffItem;
 use Illuminate\Http\Request;
 
 class TariffItemController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \App\Http\Resources\TariffItemCollection
+     * @param  Request  $request
+     * @return TariffItemCollection
      */
     public function index(Request $request)
     {
@@ -23,8 +23,8 @@ class TariffItemController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TariffItemStoreRequest $request
-     * @return \App\Http\Resources\TariffItem
+     * @param  TariffItemStoreRequest  $request
+     * @return TariffItemResource
      */
     public function store(TariffItemStoreRequest $request)
     {
@@ -34,9 +34,9 @@ class TariffItemController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\TariffItem $tariffItem
-     * @return \App\Http\Resources\TariffItem
+     * @param  Request  $request
+     * @param  TariffItem  $tariffItem
+     * @return TariffItemResource
      */
     public function show(Request $request, TariffItem $tariffItem)
     {
@@ -44,9 +44,9 @@ class TariffItemController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\TariffItemUpdateRequest $request
-     * @param \App\TariffItem $tariffItem
-     * @return \App\Http\Resources\TariffItem
+     * @param  TariffItemUpdateRequest  $request
+     * @param  TariffItem  $tariffItem
+     * @return TariffItemResource
      */
     public function update(TariffItemUpdateRequest $request, TariffItem $tariffItem)
     {
@@ -56,9 +56,10 @@ class TariffItemController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\TariffItem $tariffItem
+     * @param  Request  $request
+     * @param  TariffItem  $tariffItem
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Request $request, TariffItem $tariffItem)
     {
