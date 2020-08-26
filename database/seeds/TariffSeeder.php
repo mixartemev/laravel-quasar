@@ -29,24 +29,5 @@ class TariffSeeder extends Seeder
             ],
         ];
         Tariff::insert($tariffs);
-
-        $markets = [
-            [
-                'market'      => Market::MARKET_FRX,
-                'ts_code'    => 'FX1',
-                'profile_id' => 1,
-            ],
-            [
-                'market'      => Market::MARKET_MOEX,
-                'ts_code'    => 'TRADE',
-                'profile_id' => 2,
-            ],
-            [
-                'market'      => Market::MARKET_SPBX,
-                'ts_code'    => 'ITRADE',
-                'profile_id' => 2,
-            ],
-        ];
-        Market::insert($markets);
     }
 }
